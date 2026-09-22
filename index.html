@@ -77,6 +77,38 @@
         z-index: 10;
       }
 
+      .front-signature-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6px;
+      }
+
+      .front-signature-block img {
+        display: block;
+        width: 82px;
+        height: 20px;
+        object-fit: contain;
+      }
+
+      .front-signature-block span {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .front-bottom-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 8px;
+        background: #b71c1c;
+        z-index: 10;
+      }
+
       /* Form */
 
       .generator-container {
@@ -378,10 +410,9 @@
             <div class="preview-title">FRONT</div>
 
             <div id="frontCard" class="id-card">
-              <!-- Top Red Swoosh -->
 
               <svg
-                class="absolute top-0 left-0 w-full h-[90px] z-0"
+                class="absolute top-0 left-0 w-full h-[40px] z-0"
                 preserveAspectRatio="none"
                 viewBox="0 0 100 100"
               >
@@ -402,24 +433,25 @@
               <!-- Front Content -->
 
               <div
-                class="content-layer flex flex-col flex-grow text-center pt-8 px-4"
-                style="margin-bottom: -6px"
+                class="content-layer flex flex-col flex-grow text-center pt-4 px-4 front-card-body"
               >
+              <h3
+                  class="text-red-700 text-[0.6rem] font-bold mt-0.5 tracking-wider uppercase"
+                >
+                  GOVERNMENT OF GUJARAT Approved Blood bank
+                </h3>
+
+                <!-- FDCA -->
+
+                <p class="text-black text-xs font-bold">
+                  FDCA Lic No:
+                  <span id="cardFdca"> GB/56 </span>
+                </p>
+
                 <!-- Logo -->
 
-                <div class="flex justify-center mb-1">
-                  <svg class="w-14 h-14" viewBox="0 0 100 100">
-                    <path
-                      d="M40,20 C20,45 10,65 25,80 C35,90 45,90 55,80 C70,65 55,40 40,20 Z"
-                      fill="#b71c1c"
-                    />
-
-                    <circle cx="65" cy="40" r="8" fill="#4ade80" />
-
-                    <circle cx="75" cy="55" r="8" fill="#60a5fa" />
-
-                    <circle cx="80" cy="30" r="7" fill="#facc15" />
-                  </svg>
+                <div class="flex justify-center mt-1">
+                  <img class="w-12 h-12" src="logo.png" alt="logo"/>  
                 </div>
 
                 <!-- Titles -->
@@ -435,12 +467,6 @@
                 >
                   Voluntary & Apheresis Center
                 </h2>
-
-                <h3
-                  class="text-gray-700 text-[0.6rem] font-bold mt-0.5 tracking-wider uppercase"
-                >
-                  GOVERNMENT OF GUJARAT Approved Blood bank
-                </h3>
 
                 <h2 class="sanjivani-red font-black text-lg mt-1 tracking-wide">
                   RAKTA SEVAK
@@ -461,13 +487,6 @@
                   </div>
                 </div>
 
-                <!-- FDCA -->
-
-                <p class="text-black text-xs font-bold mt-2">
-                  FDCA Lic No:
-                  <span id="cardFdca"> GB/56 </span>
-                </p>
-
                 <!-- Quote -->
 
                 <p class="sanjivani-red italic font-bold text-[0.95rem] my-1">
@@ -477,7 +496,7 @@
                 <!-- Personal Information -->
 
                 <div class="w-full flex justify-center mt-1">
-                  <div class="text-left space-y-1.5 w-[85%]">
+                  <div class="text-left space-y-1 w-[85%]">
                     <p class="text-black text-[0.8rem]">
                       <span class="font-bold"> NAME: </span>
 
@@ -511,12 +530,15 @@
                 </div>
               </div>
 
+              <div class="block px-6">
+                <div class="border-b-[1.5px] border-[#b71c1c] h-2 block"></div>
+              </div>
+
+
               <!-- Footer -->
 
               <div class="content-layer relative px-4 pb-4 mt-2">
-                <div
-                  class="w-full border-t-[1.5px] border-[#b71c1c] text-center flex flex-col items-center"
-                >
+                <div class="w-full text-center flex flex-col items-center">
                   <p
                     class="text-black font-bold text-[0.7rem] leading-tight w-[90%]"
                   >
@@ -528,38 +550,14 @@
                     Emergency Contact: 9227778850
                   </p>
 
-                  <!-- Signature -->
-
-                  <div
-                    class="flex flex-col items-center justify-center w-full h-10"
-                  >
-                    <img
-                      src="sign.png"
-                      alt=""
-                      class="h-6 w-24 mt-2 object-contain"
-                    />
-
-                    <div class="w-28"></div>
-
-                    <span class="text-[0.7rem] pt-0 font-bold text-white">
-                      Authorized Signatory
-                    </span>
+                  <div class="front-signature-block">
+                    <img src="sign.png" alt="Authorized Signature" />
+                    <span>Authorized Signatory</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Bottom Swoosh -->
-
-              <svg
-                class="absolute bottom-0 left-0 w-full h-[60px] z-0 transform rotate-180"
-                preserveAspectRatio="none"
-                viewBox="0 0 100 100"
-              >
-                <path
-                  d="M0,0 L100,0 L100,10 C60,40 20,0 0,60 Z"
-                  fill="#b71c1c"
-                />
-              </svg>
+              <div class="front-bottom-line"></div>
             </div>
           </div>
 
@@ -574,7 +572,7 @@
               <!-- Top Swoosh -->
 
               <svg
-                class="absolute top-0 left-0 w-full h-[60px] z-0"
+                class="absolute top-0 left-0 w-full h-[40px] z-0"
                 preserveAspectRatio="none"
                 viewBox="0 0 100 100"
               >
@@ -611,245 +609,248 @@
                     </li>
 
                     <li>24x7 Blood Support Available</li>
-                  </ul>
-                </div>
+                  </div>
 
-                <!-- Instructions -->
+                  <!-- Instructions -->
 
-                <div class="mb-3">
-                  <h3 class="sanjivani-red font-bold text-[0.9rem] mb-1">
-                    Important Instructions
-                  </h3>
+                  <div class="mb-3">
+                    <h3 class="sanjivani-red font-bold text-[0.9rem] mb-1">
+                      Important Instructions
+                    </h3>
 
-                  <ul
-                    class="list-disc pl-5 text-black text-[0.8rem] leading-snug space-y-1.5"
-                  >
-                    <li>This card is property of Sanjivani Blood Bank</li>
+                    <ul
+                      class="list-disc pl-5 text-black text-[0.8rem] leading-snug space-y-1.5"
+                    >
+                      <li>This card is property of Sanjivani Blood Bank</li>
 
-                    <li>If found, please return to above address</li>
+                      <li>If found, please return to above address</li>
 
-                    <li>Misuse of this card is strictly prohibited</li>
-                  </ul>
-                </div>
+                      <li>Misuse of this card is strictly prohibited</li>
+                    </ul>
+                  </div>
 
-                <!-- Quote + QR -->
+                  <!-- Quote + QR -->
 
-                <div class="text-center mt-3 mb-2 flex flex-col items-center">
-                  <p
-                    class="sanjivani-red font-bold text-lg leading-tight w-[80%] mx-auto mb-3"
-                  >
-                    "Your One Donation Can Save 3 Lives"
-                  </p>
+                  <div class="text-center mt-3 mb-2 flex flex-col items-center">
+                    <p
+                      class="sanjivani-red font-bold text-lg leading-tight w-[80%] mx-auto mb-3"
+                    >
+                      "Your One Donation Can Save 3 Lives"
+                    </p>
 
-                  <div
-                    class="p-1.5 bg-white border border-gray-300 rounded inline-block shadow-sm"
-                  >
-                    <img src="qr.png" alt="QR Code" class="w-28 h-28" />
+                    <div
+                      class="p-1.5 bg-white border border-gray-300 rounded inline-block shadow-sm"
+                    >
+                      <img src="qr.png" alt="QR Code" class="w-28 h-28" />
+                    </div>
                   </div>
                 </div>
+
+                <!-- Back Footer -->
+
+                <div class="content-layer mt-auto text-center pb-6 z-10 px-4">
+                  <h1 class="sanjivani-red font-black text-xl tracking-wide">
+                    SANJIVANI BLOOD BANK
+                  </h1>
+
+                  <h2 class="text-black font-semibold text-[1rem]">
+                    Voluntary & Apheresis Center
+                  </h2>
+
+                  <h3 class="text-black font-medium text-[0.8rem] mt-0.5">
+                    Managed by : Sanjivani Foundation
+                  </h3>
+                </div>
+
+                <!-- Bottom Swoosh -->
+                 <div class="front-bottom-line"></div>
               </div>
-
-              <!-- Back Footer -->
-
-              <div class="content-layer mt-auto text-center pb-6 z-10 px-4">
-                <h1 class="sanjivani-red font-black text-xl tracking-wide">
-                  SANJIVANI BLOOD BANK
-                </h1>
-
-                <h2 class="text-black font-semibold text-[1rem]">
-                  Voluntary & Apheresis Center
-                </h2>
-
-                <h3 class="text-black font-medium text-[0.8rem] mt-0.5">
-                  Managed by : Sanjivani Foundation
-                </h3>
-              </div>
-
-              <!-- Bottom Swoosh -->
-
-              <svg
-                class="absolute bottom-0 left-0 w-full h-[70px] z-0 transform rotate-180"
-                preserveAspectRatio="none"
-                viewBox="0 0 100 100"
-              >
-                <path
-                  d="M0,0 L100,0 L100,40 C75,10 25,60 0,30 Z"
-                  fill="#b71c1c"
-                />
-              </svg>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ========================= -->
-    <!-- JAVASCRIPT -->
-    <!-- ========================= -->
+      <!-- ========================= -->
+      <!-- JAVASCRIPT -->
+      <!-- ========================= -->
 
-    <script>
-      /*
-       * ============================================
-       * FORM → CARD LIVE UPDATES
-       * ============================================
-       */
+      <script>
+        /*
+         * ============================================
+         * FORM → CARD LIVE UPDATES
+         * ============================================
+         */
 
-      const nameInput = document.getElementById("nameInput");
+        const nameInput = document.getElementById("nameInput");
 
-      const bloodGroupInput = document.getElementById("bloodGroupInput");
+        const bloodGroupInput = document.getElementById("bloodGroupInput");
 
-      const designationInput = document.getElementById("designationInput");
+        const designationInput = document.getElementById("designationInput");
 
-      const contactInput = document.getElementById("contactInput");
+        const contactInput = document.getElementById("contactInput");
 
-      const fdcaInput = document.getElementById("fdcaInput");
+        const fdcaInput = document.getElementById("fdcaInput");
 
-      const cardName = document.getElementById("cardName");
+        const cardName = document.getElementById("cardName");
 
-      const cardBloodGroup = document.getElementById("cardBloodGroup");
+        const cardBloodGroup = document.getElementById("cardBloodGroup");
 
-      const cardDesignation = document.getElementById("cardDesignation");
+        const cardDesignation = document.getElementById("cardDesignation");
 
-      const cardContact = document.getElementById("cardContact");
+        const cardContact = document.getElementById("cardContact");
 
-      const cardFdca = document.getElementById("cardFdca");
+        const cardFdca = document.getElementById("cardFdca");
 
-      function updateCards() {
-        cardName.textContent = nameInput.value || " ";
+        function updateCards() {
+          cardName.textContent = nameInput.value || " ";
 
-        cardBloodGroup.textContent = bloodGroupInput.value || " ";
+          cardBloodGroup.textContent = bloodGroupInput.value || " ";
 
-        cardDesignation.textContent = designationInput.value || " ";
+          cardDesignation.textContent = designationInput.value || " ";
 
-        cardContact.textContent = contactInput.value || " ";
+          cardContact.textContent = contactInput.value || " ";
 
-        cardFdca.textContent = fdcaInput.value || " ";
-      }
-
-      nameInput.addEventListener("input", updateCards);
-
-      bloodGroupInput.addEventListener("change", updateCards);
-
-      designationInput.addEventListener("input", updateCards);
-
-      contactInput.addEventListener("input", updateCards);
-
-      fdcaInput.addEventListener("input", updateCards);
-
-      /*
-       * ============================================
-       * PROFILE IMAGE UPLOAD
-       * ============================================
-       */
-
-      const imageInput = document.getElementById("imageInput");
-
-      const cardImage = document.getElementById("cardImage");
-
-      const photoFileName = document.getElementById("photoFileName");
-
-      imageInput.addEventListener("change", function (event) {
-        const file = event.target.files[0];
-
-        if (!file) {
-          return;
+          cardFdca.textContent = fdcaInput.value || " ";
         }
 
-        if (!file.type.startsWith("image/")) {
-          alert("Please select a valid image file.");
+        nameInput.addEventListener("input", updateCards);
 
-          return;
+        bloodGroupInput.addEventListener("change", updateCards);
+
+        designationInput.addEventListener("input", updateCards);
+
+        contactInput.addEventListener("input", updateCards);
+
+        fdcaInput.addEventListener("input", updateCards);
+
+        /*
+         * ============================================
+         * PROFILE IMAGE UPLOAD
+         * ============================================
+         */
+
+        const imageInput = document.getElementById("imageInput");
+
+        const cardImage = document.getElementById("cardImage");
+
+        const photoFileName = document.getElementById("photoFileName");
+
+        imageInput.addEventListener("change", function (event) {
+          const file = event.target.files[0];
+
+          if (!file) {
+            return;
+          }
+
+          if (!file.type.startsWith("image/")) {
+            alert("Please select a valid image file.");
+
+            return;
+          }
+
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            cardImage.src = e.target.result;
+
+            photoFileName.textContent = file.name;
+          };
+
+          reader.readAsDataURL(file);
+        });
+
+        /*
+         * ============================================
+         * DOWNLOAD CARD
+         * ============================================
+         */
+
+        async function downloadCard(elementId, filename) {
+          const card = document.getElementById(elementId);
+
+          try {
+            const canvas = await html2canvas(card, {
+              scale: 3,
+
+              useCORS: true,
+
+              allowTaint: true,
+
+              backgroundColor: "#ffffff",
+
+              width: card.scrollWidth,
+
+              height: card.scrollHeight,
+
+              windowWidth: card.scrollWidth,
+
+              windowHeight: card.scrollHeight,
+
+              scrollX: 0,
+
+              scrollY: 0,
+
+              logging: false,
+            });
+
+            const link = document.createElement("a");
+
+            link.download = filename;
+
+            link.href = canvas.toDataURL("image/png");
+
+            link.click();
+          } catch (error) {
+            console.error(error);
+
+            alert("Unable to generate the card. Please try again.");
+          }
         }
 
-        const reader = new FileReader();
+        /*
+         * ============================================
+         * DOWNLOAD BUTTONS
+         * ============================================
+         */
 
-        reader.onload = function (e) {
-          cardImage.src = e.target.result;
-
-          photoFileName.textContent = file.name;
-        };
-
-        reader.readAsDataURL(file);
-      });
-
-      /*
-       * ============================================
-       * DOWNLOAD CARD
-       * ============================================
-       */
-
-      async function downloadCard(elementId, filename) {
-        const card = document.getElementById(elementId);
-
-        try {
-          const canvas = await html2canvas(card, {
-            scale: 3,
-
-            useCORS: true,
-
-            backgroundColor: "#ffffff",
-
-            logging: false,
+        document
+          .getElementById("downloadFront")
+          .addEventListener("click", function () {
+            downloadCard("frontCard", "sanjivani-id-card-front.png");
           });
 
-          const link = document.createElement("a");
+        document
+          .getElementById("downloadBack")
+          .addEventListener("click", function () {
+            downloadCard("backCard", "sanjivani-id-card-back.png");
+          });
 
-          link.download = filename;
+        /*
+         * Download both cards.
+         *
+         * This downloads two separate PNG files.
+         */
 
-          link.href = canvas.toDataURL("image/png");
+        document
+          .getElementById("downloadBoth")
+          .addEventListener("click", async function () {
+            await downloadCard("frontCard", "sanjivani-id-card-front.png");
 
-          link.click();
-        } catch (error) {
-          console.error(error);
+            /*
+             * Small delay so browsers don't block
+             * the second download.
+             */
 
-          alert("Unable to generate the card. Please try again.");
-        }
-      }
+            await new Promise((resolve) => setTimeout(resolve, 500));
 
-      /*
-       * ============================================
-       * DOWNLOAD BUTTONS
-       * ============================================
-       */
+            await downloadCard("backCard", "sanjivani-id-card-back.png");
+          });
 
-      document
-        .getElementById("downloadFront")
-        .addEventListener("click", function () {
-          downloadCard("frontCard", "sanjivani-id-card-front.png");
-        });
+        /*
+         * Initial update
+         */
 
-      document
-        .getElementById("downloadBack")
-        .addEventListener("click", function () {
-          downloadCard("backCard", "sanjivani-id-card-back.png");
-        });
-
-      /*
-       * Download both cards.
-       *
-       * This downloads two separate PNG files.
-       */
-
-      document
-        .getElementById("downloadBoth")
-        .addEventListener("click", async function () {
-          await downloadCard("frontCard", "sanjivani-id-card-front.png");
-
-          /*
-           * Small delay so browsers don't block
-           * the second download.
-           */
-
-          await new Promise((resolve) => setTimeout(resolve, 500));
-
-          await downloadCard("backCard", "sanjivani-id-card-back.png");
-        });
-
-      /*
-       * Initial update
-       */
-
-      updateCards();
-    </script>
-  </body>
+        updateCards();
+      </script>
+    </body>
 </html>
